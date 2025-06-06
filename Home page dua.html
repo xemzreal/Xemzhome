@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TopUp Game</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    header {
+      position: absolute;
+      width: 100%;
+      padding: 30px 50px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-weight: bold;
+    }
+
+    header .menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    video.bg-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .content h1 {
+      font-size: 64px;
+      letter-spacing: 2px;
+    }
+
+    .content p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      margin-top: 40px;
+      padding: 15px 30px;
+      font-size: 18px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    #next-section {
+      height: 100vh;
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .content h1 {
+        font-size: 36px;
+      }
+      .btn {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background video -->
+  <video class="bg-video" autoplay muted loop>
+    <source src="https://files.catbox.moe/w26wx4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header -->
+  <header>
+    <div>XEMZ HOST</div>
+    <div class="menu">
+      <div>Game</div>
+      <div>Panel</div>
+      <div>Community</div>
+      <div>Events</div>
+    </div>
+  </header>
+
+  <!-- Content utama -->
+  <div class="content">
+    <h1>XEMZ HOME</h1>
+    <p>Game Favorite Kamu, TopUp Mudah & Cepat</p>
+    <button class="btn" onclick="goToLink()">Selanjutnya</button>
+  </div>
+
+  <!-- Section scroll -->
+  <div id="next-section">
+    Mengarahkan ke halaman...
+  </div>
+
+  <!-- Script -->
+  <script>
+    function goToLink() {
+      document.getElementById('next-section').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        window.location.href = "https://linkkamu.com"; // Ganti link ini
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
